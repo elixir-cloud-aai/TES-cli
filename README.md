@@ -1,6 +1,6 @@
 # TES-cli
 
-Bravado-based client for Task Execution Service API services
+Bravado-based client for Task Execution Service (TES) API services
 
 # Installation
 
