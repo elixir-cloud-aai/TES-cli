@@ -28,3 +28,9 @@ Install required packages
 ```bash
 pip install -r requirements.txt
 ```
+
+Use Client to send and receive parameters for the \service-info\tasks-info endpoint
+   - open the Client.py file
+   - modify the main function ( use the client.GetServiceInfoTaskInfo function)
+   - ensure the mock-TES is running 
+   - run the script 

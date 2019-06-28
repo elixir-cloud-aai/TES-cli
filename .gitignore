@@ -102,3 +102,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+.idea/misc.xml
+*.xml
+tes_client/.DS_Store
+.idea/TES-cli.iml
