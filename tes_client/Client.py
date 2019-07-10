@@ -5,9 +5,6 @@ from bravado.client import SwaggerClient
 from bravado_core.formatter import DEFAULT_FORMATS
 
 
-# connexion stub runs on port 5000 and the schema is available at this endpoint
-connexion_url = "http://127.0.0.1:8888/ga4gh/tes/v1"
-
 # specify config for bravado
 DEFAULT_CONFIG = {
     "validate_requests": False,
@@ -18,7 +15,7 @@ DEFAULT_CONFIG = {
 
 # define a clinet
 class Client:
-    def __init__(self, url=connexion_url, config=DEFAULT_CONFIG):
+    def __init__(self, url, config=DEFAULT_CONFIG):
         self._config = config
         config["formats"] = [DEFAULT_FORMATS["int64"]]
         swagger_path = "{}/swagger.json".format(url.rstrip("/"))
@@ -47,18 +44,19 @@ class Client:
     def GetServiceInfo(self):
         return self.client.GetServiceInfo().result()
 
-    def GetServiceInfoTaskInfo(self, cpu_cores, ram_gb, disk_gb, preemptible, zones):
+    def GetTaskInfo(self, cpu_cores, ram_gb, disk_gb, preemptible, zones, execution_time_min):
         tesResources = self.models.get_model("tesResources")
         request = tesResources(
             cpu_cores=cpu_cores,
             ram_gb=ram_gb,
             disk_gb=disk_gb,
             preemptible=preemptible,
-            zones=zones
+            zones=zones,
+            execution_time_min=execution_time_min
         )
         # to-do :
         #   validate response
-        return self.client.GetServiceInfoTaskInfo(body=request).result()
+        return self.client.GetTaskInfo(body=request).result()
 
     def GetTask(self, task_id):
         return self.client.GetTask(id=task_id).result()
@@ -71,9 +69,11 @@ class Client:
 
 
 if __name__ == "__main__":
-    client = Client()
 
-    response = client.GetServiceInfoTaskInfo(
-        cpu_cores=4, ram_gb=8, disk_gb=100, preemptible=True, zones=[]
+    # an example of how to use the client
+    client = Client(url="http://0.0.0.0:9001/ga4gh/tes/v1")
+
+    response = client.GetTaskInfo(
+        cpu_cores=4, ram_gb=8, disk_gb=100, preemptible=True, zones=[], execution_time_min=10
     )
     print(response)
