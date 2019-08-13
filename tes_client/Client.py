@@ -13,6 +13,7 @@ DEFAULT_CONFIG = {
     "formats": DEFAULT_FORMATS["int64"],
 }
 
+
 # define a clinet
 class Client:
     def __init__(self, url, config=DEFAULT_CONFIG):
@@ -46,6 +47,7 @@ class Client:
 
     def GetTaskInfo(self, cpu_cores, ram_gb, disk_gb, preemptible, zones, execution_time_min):
         tesResources = self.models.get_model("tesResources")
+
         request = tesResources(
             cpu_cores=cpu_cores,
             ram_gb=ram_gb,
@@ -71,9 +73,14 @@ class Client:
 if __name__ == "__main__":
 
     # an example of how to use the client
-    client = Client(url="http://0.0.0.0:9001/ga4gh/tes/v1")
+    client = Client(url="http://193.166.24.111/ga4gh/tes/v1")
 
     response = client.GetTaskInfo(
-        cpu_cores=4, ram_gb=8, disk_gb=100, preemptible=True, zones=[], execution_time_min=10
+        cpu_cores=4,
+        ram_gb=8,
+        disk_gb=100,
+        preemptible=True,
+        zones=[],
+        execution_time_min=10,
     )
     print(response)

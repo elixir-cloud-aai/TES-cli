@@ -1,36 +1,38 @@
 # TES-cli
 
-Bravado-based client for GA4GH Task Execution Service (TES) API services
+This repository contains a [bravado]-based client for modified GA4GH Data Repository Service (DRS) API services the 
+[Open API specification] for which can be found in the [mock-TES] repository along with a mock-service for the same.
 
 # Installation
 
-Clone repository
+Install as a package on your chosen python environment.
 
+Clone repository
 ```bash
 git clone https://github.com/elixir-europe/TES-cli.git
 ```
 
-Traverse to project directory
-
+Traverse project repository 
 ```bash
 cd TES-cli
+python setup.py install
 ```
 
-Create and activate virtual environment
-
-```bash
-virtualenv -p `which python3` venv
-source venv/bin/activate
+To use the client import to the python script as follows
+```python
+from tes_client import Client
+client = Client.Client("the-tes-uri")
 ```
 
-Install required packages
+**_or_**
 
-```bash
-pip install -r requirements.txt
-```
+Use the ```gihub -e git+https://github.com/elixir-europe/DRS-cli.git#egg=TES_cli``` to this repository and add it to your 
+requirements 
 
-Use Client to send and receive parameters for the \service-info\tasks-info endpoint
-   - open the Client.py file
-   - modify the main function ( use the client.GetServiceInfoTaskInfo function)
-   - ensure the mock-TES is running 
-   - run the script 
+To test the working of the client you can run the main of the [client](tes_client/Client.py) script which currently 
+returns a response from one of the live mock services.
+
+[TESTribute]:https://github.com/elixir-europe/TEStribute 
+[mock-TES]:https://github.com/elixir-europe/mock-TES
+[bravado]:https://github.com/Yelp/bravado
+[Open API specification]:https://github.com/elixir-europe/mock-TES/blob/master/mock_tes/specs/schema.task_execution_service.d55bf88.openapi.modified.yaml

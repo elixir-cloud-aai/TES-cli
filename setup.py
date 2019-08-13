@@ -26,6 +26,7 @@ setup(
         'Natural Language :: English',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7'
     ],
     install_requires=['bravado[fido]'],
     python_requires='>=3'

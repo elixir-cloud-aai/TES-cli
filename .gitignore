@@ -106,3 +106,9 @@ venv.bak/
 *.xml
 tes_client/.DS_Store
 .idea/TES-cli.iml
+
+## macOS
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
