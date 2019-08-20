@@ -104,6 +104,8 @@ of the [Global Alliance for Genomics and Health] [organization].
 
 [2019 Google Summer of Code]: <https://summerofcode.withgoogle.com/projects/#6613336345542656>
 [Bravado]: <https://github.com/Yelp/bravado>
+[contributing guidelines]: CONTRIBUTING.md
+[code of conduct]: CODE_OF_CONDUCT.md
 [ELIXIR Cloud and AAI]: <https://elixir-europe.github.io/cloud/>
 [Global Alliance for Genomics and Health]: <https://www.ga4gh.org/>
 [logo banner]: logos/logo-banner.svg
