@@ -10,6 +10,7 @@ DEFAULT_CONFIG = {
     "validate_responses": False,
     "headers": None,
     "formats": [DEFAULT_FORMATS["int64"]],
+    "include_missing_properties": True,
 }
 
 
@@ -23,33 +24,25 @@ class Client:
         )
         self.client = self.models.TaskService
 
-    def GetTaskInfo(
+    def getTaskInfo(
         self,
-        cpu_cores,
-        ram_gb,
-        disk_gb,
-        preemptible,
-        zones,
-        execution_time_min
+        timeout=3,
+        **kwargs,
     ):
         # TODO: validate response
         tesResources = self.models.get_model("tesResources")
         request = tesResources(
-            cpu_cores=cpu_cores,
-            ram_gb=ram_gb,
-            disk_gb=disk_gb,
-            preemptible=preemptible,
-            zones=zones,
-            execution_time_min=execution_time_min
+            **kwargs,
         )
-        return self.client.GetTaskInfo(body=request).result()
+        return self.client.GetTaskInfo(body=request).result(timeout=timeout)
 
-    def UpdateTaskInfoConfig(
+    def updateTaskInfoConfig(
         self,
         currency,
         time_unit,
         unit_costs,
     ):
+        # TODO: validate response
         tesTaskInfoConfig = self.models.get_model("tesTaskInfoConfig")
         request = tesTaskInfoConfig(
             currency=currency,
