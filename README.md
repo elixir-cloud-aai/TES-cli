@@ -23,12 +23,10 @@ client = Client.Client("http://localhost:9001/ga4gh/tes/v1/")
 Access the [mock-TES] `/tasks/task-info` endpoint with, e.g.:
 
 ```py
-response = client.GetTaskInfo(
+response = client.getTaskInfo(
     cpu_cores=4,
     ram_gb=8,
     disk_gb=100,
-    preemptible=True,
-    zones=[],
     execution_time_min=10,
 )
 ```
@@ -36,7 +34,7 @@ response = client.GetTaskInfo(
 Access the [mock-TES] `/update-config` endpoint with, e.g.:
 
 ```py
-response = client.UpdateTaskInfoConfig(
+response = client.updateTaskInfoConfig(
     currency="USD",
     time_unit="MINUTES",
     unit_costs={
