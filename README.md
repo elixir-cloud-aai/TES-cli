@@ -58,7 +58,8 @@ You can install `TES-cli` in one of two ways:
 
 ```bash
 git clone https://github.com/elixir-europe/TES-cli.git
-python TES-cli/setup.py install
+cd TES-cli
+python setup.py install
 ```
 
 ### Installation via package manager
