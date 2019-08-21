@@ -11,9 +11,9 @@ To use the client import it as follows in your Python code after
 [installation](#Installation):
 
 ```py
-from tes_client import Client
+import tes_client
 
-client = Client.Client("http://localhost:9001/ga4gh/tes/v1/")
+client = tes_client.Client("http://localhost:9001/ga4gh/tes/v1/")
 ```
 
 > Note that the indicated URL is valid when [mock-TES] was installed at the
