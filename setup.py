@@ -4,7 +4,7 @@ with open('README.md', 'r') as fh:
     long_description = fh.read()
 
 setup(
-    name='TES_cli',
+    name='tes_client',
     version='0.1.0',
     author='ELIXIR Europe',
     author_email='vani11537@one.ducic.ac.in',

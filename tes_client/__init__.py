@@ -1,5 +1,5 @@
 """
-Client script for the mock Task Execution Service
+Client for the mockup GA4GH Task Execution Service `mock-TES`.
 """
 from bravado.client import SwaggerClient
 from bravado_core.formatter import DEFAULT_FORMATS
@@ -26,23 +26,24 @@ class Client:
 
     def getTaskInfo(
         self,
-        timeout=3,
+        timeout: float = 3,
         **kwargs,
     ):
-        # TODO: validate response
         tesResources = self.models.get_model("tesResources")
         request = tesResources(
             **kwargs,
         )
-        return self.client.GetTaskInfo(body=request).result(timeout=timeout)
+        return self.client.GetTaskInfo(
+            body=request
+        ).result(timeout=timeout)
 
     def updateTaskInfoConfig(
         self,
         currency,
         time_unit,
         unit_costs,
+        timeout: float = 3,
     ):
-        # TODO: validate response
         tesTaskInfoConfig = self.models.get_model("tesTaskInfoConfig")
         request = tesTaskInfoConfig(
             currency=currency,
@@ -54,4 +55,6 @@ class Client:
                 "data_transfer": unit_costs["data_transfer"],
             }
         )
-        return self.client.UpdateTaskInfoConfig(body=request).result()
+        return self.client.UpdateTaskInfoConfig(
+            body=request
+        ).result(timeout=timeout)
