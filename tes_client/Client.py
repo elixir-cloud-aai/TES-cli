@@ -34,10 +34,13 @@ class Client:
         request = tesResources(
             **kwargs,
         )
-        return self.client.GetTaskInfo(body=request).result(timeout=timeout)
+        return self.client.GetTaskInfo(
+            body=request
+        ).result(timeout=timeout)
 
     def updateTaskInfoConfig(
         self,
+        timeout=3,
         currency,
         time_unit,
         unit_costs,
@@ -54,4 +57,6 @@ class Client:
                 "data_transfer": unit_costs["data_transfer"],
             }
         )
-        return self.client.UpdateTaskInfoConfig(body=request).result()
+        return self.client.UpdateTaskInfoConfig(
+            body=request
+        ).result(timeout=timeout)
