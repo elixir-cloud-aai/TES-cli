@@ -18,9 +18,9 @@ client = tes_client.Client("http://localhost:9001/ga4gh/tes/v1/")
 
 > Note that the indicated URL is valid when [mock-TES] was installed at the
 > default location on your local machine. When a different TES instance is
-> supposed to be used, replace the full URL (including `http://` or `https://`.
+> supposed to be used, replace the full URL (including `http://` or `https://`).
 
-Access the [mock-TES] `/tasks/task-info` endpoint with, e.g.:
+Access the [mock-TES] `POST /tasks/task-info` endpoint with, e.g.:
 
 ```py
 response = client.getTaskInfo(
@@ -31,7 +31,7 @@ response = client.getTaskInfo(
 )
 ```
 
-Access the [mock-TES] `/update-config` endpoint with, e.g.:
+Access the [mock-TES] `POST /update-config` endpoint with, e.g.:
 
 ```py
 response = client.updateTaskInfoConfig(
@@ -100,6 +100,7 @@ of the [Global Alliance for Genomics and Health] [organization].
 
 ![logo banner]
 
+[Apache License 2.0]: <https://www.apache.org/licenses/LICENSE-2.0>
 [2019 Google Summer of Code]: <https://summerofcode.withgoogle.com/projects/#6613336345542656>
 [Bravado]: <https://github.com/Yelp/bravado>
 [contributing guidelines]: CONTRIBUTING.md
@@ -109,7 +110,7 @@ of the [Global Alliance for Genomics and Health] [organization].
 [logo banner]: logos/logo-banner.svg
 [mock-TES]: <https://github.com/elixir-europe/mock-TES>
 [modified]: <https://github.com/elixir-europe/mock-TES/blob/master/mock_tes/specs/schema.task_execution_service.d55bf88.openapi.modified.yaml>
-[Open API specification]: <https://github.com/elixir-europe/mock-TES/blob/master/mock_tes/specs/schema.task_execution_service.d55bf88.openapi.modified.yaml>
 [organization]: <https://summerofcode.withgoogle.com/organizations/6643588285333504/>
+[semantic versioning]: <https://semver.org/>
 [Task Execution Service]: <https://github.com/ga4gh/task-execution-schemas>
 [TEStribute]: <https://github.com/elixir-europe/TEStribute>
