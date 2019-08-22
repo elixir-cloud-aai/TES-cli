@@ -24,6 +24,7 @@ class Client:
         )
         self.client = self.models.TaskService
 
+
     def getTaskInfo(
         self,
         timeout: float = 3,
@@ -36,6 +37,7 @@ class Client:
         return self.client.GetTaskInfo(
             body=request
         ).result(timeout=timeout)
+
 
     def updateTaskInfoConfig(
         self,
