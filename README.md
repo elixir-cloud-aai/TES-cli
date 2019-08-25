@@ -1,3 +1,4 @@
+[![PyPI version](https://badge.fury.io/py/tes-client.svg)](https://badge.fury.io/py/tes-client) ![PyPI implementation](https://img.shields.io/pypi/pyversions/tes_client)
 # TES-cli
 
 This repository contains a [Bravado]-based client for a [modified] version of
