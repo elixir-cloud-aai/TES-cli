@@ -1,6 +1,8 @@
 """
 Client for the mockup GA4GH Task Execution Service `mock-TES`.
 """
+from urllib.parse import urlparse
+
 from bravado.client import SwaggerClient
 from bravado_core.formatter import DEFAULT_FORMATS
 from bravado.requests_client import RequestsClient
@@ -27,7 +29,7 @@ class Client:
         if jwt:
             http_client = RequestsClient()
             http_client.set_api_key(
-                host='',
+                host=urlparse(url).netloc,
                 api_key=f"Bearer {jwt}",
                 param_name="Authorization",
                 param_in="header"
