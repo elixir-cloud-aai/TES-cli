@@ -13,11 +13,25 @@ DEFAULT_CONFIG = {
     "include_missing_properties": True,
 }
 
-
 class Client:
-    '''Client for mock-TES service.'''
-    def __init__(self, url, config=DEFAULT_CONFIG):
+    """Client for mock-TES service."""
+    def __init__(
+        self,
+        url,
+        jwt=None,
+        config=DEFAULT_CONFIG
+    ):
         swagger_path = "{url}/swagger.json".format(url=url.rstrip("/"))
+        if jwt:
+            http_client = RequestsClient()
+            http_client.set_api_key(
+                host=None,
+                api_key=f"Bearer {jwt}",
+                param_name="Authorization",
+                param_in="header"
+            )
+        else:
+            http_client = None
         self.models = SwaggerClient.from_url(
             swagger_path,
             config=config
