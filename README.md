@@ -22,8 +22,8 @@ It is possible to supply a Bearer token, which will then be added to the
 
 ```py
 client = tes_client.Client(
-   swagger_path="https://path.to/swagger.json",
-   jwt="MyT0kEn"
+   url="https://path.to/swagger.json",
+   jwt="SomET0kEn"
 )
 ```
 
