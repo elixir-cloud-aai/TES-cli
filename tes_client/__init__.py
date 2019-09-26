@@ -3,6 +3,7 @@ Client for the mockup GA4GH Task Execution Service `mock-TES`.
 """
 from bravado.client import SwaggerClient
 from bravado_core.formatter import DEFAULT_FORMATS
+from bravado.requests_client import RequestsClient
 
 # Bravado configuration
 DEFAULT_CONFIG = {
@@ -12,6 +13,7 @@ DEFAULT_CONFIG = {
     "formats": [DEFAULT_FORMATS["int64"]],
     "include_missing_properties": True,
 }
+
 
 class Client:
     """Client for mock-TES service."""
@@ -25,7 +27,7 @@ class Client:
         if jwt:
             http_client = RequestsClient()
             http_client.set_api_key(
-                host=None,
+                host='',
                 api_key=f"Bearer {jwt}",
                 param_name="Authorization",
                 param_in="header"
