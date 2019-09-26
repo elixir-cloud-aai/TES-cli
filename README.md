@@ -17,6 +17,16 @@ import tes_client
 client = tes_client.Client("http://localhost:9001/ga4gh/tes/v1/")
 ```
 
+It is possible to supply a Bearer token, which will then be added to the
+`Authentication` header (prepended by `Bearer`) for every outbound call:
+
+```py
+client = tes_client.Client(
+   swagger_path="https://path.to/swagger.json",
+   jwt="MyT0kEn"
+)
+```
+
 > Note that the indicated URL is valid when [mock-TES] was installed at the
 > default location on your local machine. When a different TES instance is
 > supposed to be used, replace the full URL (including `http://` or `https://`).
