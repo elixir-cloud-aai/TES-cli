@@ -1,4 +1,5 @@
 [![PyPI version](https://badge.fury.io/py/tes-client.svg)](https://badge.fury.io/py/tes-client) ![PyPI implementation](https://img.shields.io/pypi/pyversions/tes_client)
+
 # TES-cli
 
 This repository contains a [Bravado]-based client for a [modified] version of
@@ -75,6 +76,12 @@ python setup.py install
 
 ```bash
 pip install -e git+https://github.com/elixir-europe/TES-cli.git#egg=tes_client
+```
+
+or
+
+```bash
+pip install drs_client
 ```
 
 ## Contributing
