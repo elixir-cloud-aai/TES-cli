@@ -5,7 +5,7 @@ with open('README.md', 'r') as fh:
 
 setup(
     name='tes_client',
-    version='0.2.0',
+    version='0.2.1',
     author='ELIXIR Europe',
     author_email='vani11537@one.ducic.ac.in',
     description='bravado generated mock GA4GH TES client',
