@@ -78,13 +78,13 @@ python setup.py install
 ### Installation via package manager
 
 ```bash
-pip install -e git+https://github.com/elixir-europe/TES-cli.git#egg=tes_client
+pip install drs_client
 ```
 
-or
+or (for development version)
 
 ```bash
-pip install drs_client
+pip install -e git+https://github.com/elixir-europe/TES-cli.git#egg=tes_client
 ```
 
 ## Contributing
