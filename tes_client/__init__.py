@@ -60,14 +60,12 @@ class Client:
     def updateTaskInfoConfig(
         self,
         currency,
-        time_unit,
         unit_costs,
         timeout: float = 3,
     ):
         tesTaskInfoConfig = self.models.get_model("tesTaskInfoConfig")
         request = tesTaskInfoConfig(
             currency=currency,
-            time_unit=time_unit,
             unit_costs={
                 "cpu_usage": unit_costs["cpu_usage"],
                 "memory_consumption": unit_costs["memory_consumption"],
