@@ -1,6 +1,9 @@
-[![PyPI version](https://badge.fury.io/py/tes-client.svg)](https://badge.fury.io/py/tes-client) ![PyPI implementation](https://img.shields.io/pypi/pyversions/tes_client)
-
 # TES-cli
+
+[![Apache License](https://img.shields.io/badge/license-Apache%202.0-orange.svg?style=flat&color=important)](http://www.apache.org/licenses/LICENSE-2.0)
+![GitHub: latest tag](https://flat.badgen.net/github/tag/elixir-europe/TES-cli?color=cyan&icon=github)
+[![PyPI](https://img.shields.io/pypi/pyversions/tes-client.svg?style=flat)](https://pypi.python.org/pypi/tes-client)
+[![PyPI](https://img.shields.io/pypi/v/tes_client.svg?style=flat&color=bright-green)](https://pypi.python.org/pypi/tes_client)
 
 This repository contains a [Bravado]-based client for a [modified] version of
 the [Task Execution Service] API schema of the [Global Alliance for Genomics and
