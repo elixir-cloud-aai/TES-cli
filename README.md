@@ -1,5 +1,9 @@
-[![PyPI version](https://badge.fury.io/py/tes-client.svg)](https://badge.fury.io/py/tes-client) ![PyPI implementation](https://img.shields.io/pypi/pyversions/tes_client)
 # TES-cli
+
+[![Apache License](https://img.shields.io/badge/license-Apache%202.0-orange.svg?style=flat&color=important)](http://www.apache.org/licenses/LICENSE-2.0)
+![GitHub: latest tag](https://flat.badgen.net/github/tag/elixir-europe/TES-cli?color=cyan&icon=github)
+[![PyPI](https://img.shields.io/pypi/pyversions/tes-client.svg?style=flat)](https://pypi.python.org/pypi/tes-client)
+[![PyPI](https://img.shields.io/pypi/v/tes_client.svg?style=flat&color=bright-green)](https://pypi.python.org/pypi/tes_client)
 
 This repository contains a [Bravado]-based client for a [modified] version of
 the [Task Execution Service] API schema of the [Global Alliance for Genomics and
@@ -15,6 +19,16 @@ To use the client import it as follows in your Python code after
 import tes_client
 
 client = tes_client.Client("http://localhost:9001/ga4gh/tes/v1/")
+```
+
+It is possible to supply a Bearer token, which will then be added to the
+`Authentication` header (prepended by `Bearer`) for every outbound call:
+
+```py
+client = tes_client.Client(
+   url="https://path.to/swagger.json",
+   jwt="SomET0kEn"
+)
 ```
 
 > Note that the indicated URL is valid when [mock-TES] was installed at the
@@ -62,6 +76,12 @@ python setup.py install
 ```
 
 ### Installation via package manager
+
+```bash
+pip install drs_client
+```
+
+or (for development version)
 
 ```bash
 pip install -e git+https://github.com/elixir-europe/TES-cli.git#egg=tes_client

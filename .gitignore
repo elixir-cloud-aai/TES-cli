@@ -112,3 +112,8 @@ tes_client/.DS_Store
 .DS_Store
 .AppleDouble
 .LSOverride
+
+### Code ###
+.vscode/*
+
+
